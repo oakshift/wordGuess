@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #EEF2F7;
+  min-height: 100vh;
+}
+
+/* Header */
+.game-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2C3E50;
+  letter-spacing: -0.5px;
+}
+
+.theme-select {
+  max-width: 220px;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  border: 2px solid #BDC3C7;
+}
+
+.score-badge {
+  background: #F39C12;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.score-badge i { margin-right: 6px; }
+
+/* Game Card */
+.game-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 580px;
+}
+
+/* Image */
+.image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  margin-bottom: 1.5rem;
+}
+
+.game-image {
+  width: 100%;
+  max-width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Word Boxes */
+.word-boxes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  min-height: 60px;
+}
+
+.letter-box {
+  width: 52px;
+  height: 52px;
+  border: 3px solid #BDC3C7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  color: #2C3E50;
+  background: white;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.letter-box.filled {
+  background: #3498DB;
+  border-color: #2980B9;
+  color: white;
+  cursor: pointer;
+}
+
+.letter-box.filled:hover {
+  background: #2471A3;
+  transform: scale(0.95);
+}
+
+.letter-box.correct {
+  background: #27AE60;
+  border-color: #1E8449;
+  color: white;
+}
+
+.letter-box.wrong {
+  background: #E74C3C;
+  border-color: #C0392B;
+  color: white;
+}
+
+/* Letter Tiles */
+.letter-tiles-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  min-height: 66px;
+}
+
+.letter-tile {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  background: #F39C12;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.12s;
+  box-shadow: 0 5px 0 #D68910;
+  user-select: none;
+}
+
+.letter-tile:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #D68910;
+}
+
+.letter-tile:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #D68910;
+}
+
+.letter-tile.used,
+.letter-tile:disabled {
+  background: #ECF0F1;
+  color: #BDC3C7;
+  box-shadow: 0 5px 0 #D5D8DC;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Feedback */
+.feedback {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.feedback.success {
+  background: #D5F5E3;
+  color: #1E8449;
+  border: 2px solid #A9DFBF;
+}
+
+.feedback.error {
+  background: #FADBD8;
+  color: #C0392B;
+  border: 2px solid #F1948A;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.controls .btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+/* Error card */
+.error-card {
+  background: #FADBD8;
+  border: 2px solid #F1948A;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  color: #C0392B;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  60% { transform: translateX(6px); }
+}
+
+.bounce { animation: bounce 0.4s ease; }
+.shake  { animation: shake 0.4s ease; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .game-card { padding: 1.25rem; border-radius: 16px; }
+  .game-title { font-size: 1.5rem; }
+  .game-image { max-width: 220px; height: 220px; }
+  .letter-box { width: 44px; height: 44px; font-size: 1.2rem; }
+  .letter-tile { width: 48px; height: 48px; font-size: 1.3rem; }
+}
