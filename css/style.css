@@ -220,6 +220,119 @@ body {
 .bounce { animation: bounce 0.4s ease; }
 .shake  { animation: shake 0.4s ease; }
 
+/* Game navigation */
+.game-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.game-nav a {
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid #2C3E50;
+  color: #2C3E50;
+  transition: all 0.15s;
+}
+
+.game-nav a.active,
+.game-nav a:hover {
+  background: #2C3E50;
+  color: white;
+}
+
+/* Word tiles (sentence game) */
+.word-tile {
+  padding: 10px 16px;
+  min-width: 60px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: #8E44AD;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.12s;
+  box-shadow: 0 5px 0 #6C3483;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.word-tile:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 #6C3483;
+}
+
+.word-tile:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #6C3483;
+}
+
+.word-tile.used,
+.word-tile:disabled {
+  background: #ECF0F1;
+  color: #BDC3C7;
+  box-shadow: 0 5px 0 #D5D8DC;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Word boxes (sentence game) */
+.word-boxes-container.sentence {
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 56px;
+}
+
+.word-box {
+  min-width: 70px;
+  min-height: 50px;
+  padding: 10px 14px;
+  border: 3px solid #BDC3C7;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  color: #2C3E50;
+  background: white;
+  transition: all 0.15s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.word-box.filled {
+  background: #8E44AD;
+  border-color: #6C3483;
+  color: white;
+  cursor: pointer;
+}
+
+.word-box.filled:hover {
+  background: #6C3483;
+  transform: scale(0.97);
+}
+
+.word-box.correct {
+  background: #27AE60;
+  border-color: #1E8449;
+  color: white;
+}
+
+.word-box.wrong {
+  background: #E74C3C;
+  border-color: #C0392B;
+  color: white;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .game-card { padding: 1.25rem; border-radius: 16px; }
