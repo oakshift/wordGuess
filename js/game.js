@@ -237,6 +237,12 @@ class WordGame {
       this.showSuccessFeedback();
     } else {
       this.showErrorFeedback(this.filteredWords[this.currentIndex].palavra);
+      // Re-queue the word 2-4 positions ahead so it appears again later
+      const insertAt = Math.min(
+        this.currentIndex + 2 + Math.floor(Math.random() * 3),
+        this.filteredWords.length
+      );
+      this.filteredWords.splice(insertAt, 0, this.filteredWords[this.currentIndex]);
     }
     this.updateCounter();
     this.updateNextButton();
