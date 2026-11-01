@@ -111,7 +111,7 @@ class WordGame {
       return;
     }
     const wordData = this.filteredWords[this.currentIndex];
-    const word = wordData.palavra.toUpperCase().trim();
+    const word = wordData.palavra.toLowerCase().trim();
     this.scrambled = this.getScrambled(word);
     this.wordBoxes = new Array(word.length).fill(null);
     this.tileUsed = new Array(this.scrambled.length).fill(false);
@@ -167,7 +167,7 @@ class WordGame {
     const container = document.getElementById('word-boxes');
     container.innerHTML = '';
     const answer = this.wordBoxes.join('');
-    const correct = this.answered && answer === this.filteredWords[this.currentIndex].palavra.toUpperCase().trim();
+    const correct = this.answered && answer === this.filteredWords[this.currentIndex].palavra.toLowerCase().trim();
 
     this.wordBoxes.forEach((letter, i) => {
       const box = document.createElement('div');
@@ -227,7 +227,7 @@ class WordGame {
 
   checkAnswer() {
     const answer = this.wordBoxes.join('');
-    const correct = this.filteredWords[this.currentIndex].palavra.toUpperCase().trim();
+    const correct = this.filteredWords[this.currentIndex].palavra.toLowerCase().trim();
     this.answered = true;
     this.total++;
     this.renderBoxes();
@@ -291,7 +291,7 @@ class WordGame {
   showErrorFeedback(correctWord) {
     const fb = document.getElementById('feedback');
     fb.className = 'feedback error shake';
-    fb.innerHTML = `<i class="bi bi-x-circle-fill"></i> Quase! A palavra era <strong>${correctWord.toUpperCase()}</strong>`;
+    fb.innerHTML = `<i class="bi bi-x-circle-fill"></i> Quase! A palavra era <strong>${correctWord.toLowerCase()}</strong>`;
     fb.classList.remove('d-none');
     setTimeout(() => fb.classList.remove('shake'), 400);
   }
