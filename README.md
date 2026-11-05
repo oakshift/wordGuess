@@ -1,4 +1,4 @@
-# Adivinha a Palavra
+# Descobre a Palavra
 
 Jogos interativos para aulas de português como língua estrangeira. Dois modos de jogo acessíveis pelo browser, geridos pela professora através do Google Sheets.
 
