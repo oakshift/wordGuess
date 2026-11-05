@@ -1,5 +1,5 @@
 const CONFIG = {
   csvUrl:     'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeRzJxHJAf5-KKEykBY3gk9O0OFfG_-JhjSvUIDuZRoGU9BniKi0B6-2lY7rgCHahOVwGKDdocMdgi/pub?gid=0&single=true&output=csv',
   frasesUrl:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeRzJxHJAf5-KKEykBY3gk9O0OFfG_-JhjSvUIDuZRoGU9BniKi0B6-2lY7rgCHahOVwGKDdocMdgi/pub?gid=127858541&single=true&output=csv',
-  configUrl:  '', // separador "Configuração" (jogo | ativo); vazio = ambos os jogos ativos
+  configUrl:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeRzJxHJAf5-KKEykBY3gk9O0OFfG_-JhjSvUIDuZRoGU9BniKi0B6-2lY7rgCHahOVwGKDdocMdgi/pub?gid=595034073&single=true&output=csv', // separador "Configuração" (jogo | ativo); vazio = ambos os jogos ativos
 };
