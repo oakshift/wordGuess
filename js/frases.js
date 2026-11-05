@@ -14,6 +14,7 @@ class SentenceGame {
   }
 
   async init() {
+    if (!(await checkGameEnabled('frases'))) return;
     if (!CONFIG.frasesUrl) {
       this.showConfigError();
       return;

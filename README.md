@@ -67,6 +67,7 @@ Os URLs gerados são colocados em `js/config.js`:
 const CONFIG = {
   csvUrl:    'URL_DO_SEPARADOR_PALAVRAS',
   frasesUrl: 'URL_DO_SEPARADOR_FRASES',
+  configUrl: 'URL_DO_SEPARADOR_CONFIGURACAO',
 };
 ```
 
@@ -80,6 +81,22 @@ const CONFIG = {
 
 Para esconder temporariamente uma palavra ou frase sem a apagar, muda a coluna `ativo` de `TRUE` para `FALSE`.
 
+### Ativar ou desativar jogos
+
+O separador "Configuração" define que jogos estão disponíveis:
+
+| jogo | ativo |
+|------|-------|
+| Palavras | TRUE |
+| Frases | TRUE |
+
+- Um jogo com `FALSE` deixa de aparecer no menu de navegação.
+- Se o aluno abrir um jogo desativado, é levado para o outro jogo.
+- Se os dois estiverem desativados, aparece a mensagem "Jogo indisponível".
+- Se o separador não existir ou não estiver publicado, os dois jogos ficam ativos.
+
+Publica este separador como CSV (tal como os outros) e coloca o URL em `configUrl` no `js/config.js`.
+
 ## Estrutura do projeto
 
 ```
@@ -90,6 +107,7 @@ wordGuess/
 │   └── style.css
 └── js/
     ├── config.js       ← URLs do Google Sheet
+    ├── settings.js     ← Ativar/desativar jogos
     ├── game.js         ← Lógica do jogo de palavras
     └── frases.js       ← Lógica do jogo de frases
 ```

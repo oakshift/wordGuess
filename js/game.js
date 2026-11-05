@@ -13,6 +13,7 @@ class WordGame {
   }
 
   async init() {
+    if (!(await checkGameEnabled('palavras'))) return;
     if (!CONFIG.csvUrl) {
       this.showConfigError();
       return;
